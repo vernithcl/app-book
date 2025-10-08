@@ -34,6 +34,9 @@ export default function Header() {
           <Link href="/books" className="hover:underline">
             Books
           </Link>
+          <Link href="/add-book" className="hover:underline">
+            Add Book
+          </Link>
           {isLoggedIn ? (
             <>
               <Link href="/dashboard" className="hover:underline ml-auto">
