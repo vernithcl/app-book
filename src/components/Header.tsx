@@ -2,6 +2,10 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
+
+export default function Header() {
+  const { isLoggedIn } = useAuth();
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 
@@ -30,6 +34,12 @@ export default function Header() {
           </Link>
 
           {isLoggedIn ? (
+            <Link href="/dashboard" className="hover:underline ml-auto">
+              Dashboard
+            </Link>
+          ) : (
+            <>
+              <Link href="/login" className="hover:underline ml-auto">
             <>
               <Link href="/dashboard" className="hover:underline">
                 Dashboard
