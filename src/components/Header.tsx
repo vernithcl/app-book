@@ -6,6 +6,17 @@ import { useAuth } from '@/context/AuthContext';
 
 export default function Header() {
   const { isLoggedIn } = useAuth();
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
+
+export default function Header() {
+  const { isLoggedIn, logout } = useAuth();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
+  };
 
   return (
     <header className="bg-blue-600 text-white px-6 py-4 shadow">
@@ -29,6 +40,20 @@ export default function Header() {
           ) : (
             <>
               <Link href="/login" className="hover:underline ml-auto">
+            <>
+              <Link href="/dashboard" className="hover:underline">
+                Dashboard
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="hover:underline text-white"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link href="/login" className="hover:underline">
                 Login
               </Link>
               <Link href="/register" className="hover:underline">
