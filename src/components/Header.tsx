@@ -28,7 +28,12 @@ export default function Header() {
           <Link href="/about" className="hover:underline">
             About
           </Link>
-
+          <Link href="/contact" className="hover:underline">
+            Contact
+          </Link>
+          <Link href="/books" className="hover:underline">
+            Books
+          </Link>
           {isLoggedIn ? (
             <>
               <Link href="/dashboard" className="hover:underline ml-auto">
