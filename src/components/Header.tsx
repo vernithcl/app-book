@@ -23,6 +23,9 @@ export default function Header() {
           <Link href="/login" className="hover:underline ml-auto">
             Login
           </Link>
+          <Link href="/register" className="hover:underline">
+            Register
+          </Link>
         </nav>
 
         {/* Global search input */}
