@@ -1,22 +1,28 @@
-'use client'; // for interactivity (like search input)
+'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 export default function Header() {
   return (
     <header className="bg-blue-600 text-white px-6 py-4 shadow">
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Logo / App Title */}
-        <div className="text-2xl font-bold">📚 Book Manager</div>
+        <div className="text-2xl font-bold">
+          <Link href="/">📚 Book Manager</Link>
+        </div>
 
-        {/* Menu items */}
-        <nav className="flex gap-6 text-sm font-medium">
-          <a href="/" className="hover:underline">
+        {/* Menu and login */}
+        <nav className="flex items-center w-full sm:w-auto gap-6 text-sm font-medium">
+          <Link href="/" className="hover:underline">
             Home
-          </a>
-          <a href="/about" className="hover:underline">
+          </Link>
+          <Link href="/about" className="hover:underline">
             About
-          </a>
+          </Link>
+          <Link href="/login" className="hover:underline ml-auto">
+            Login
+          </Link>
         </nav>
 
         {/* Global search input */}

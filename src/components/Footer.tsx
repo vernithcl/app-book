@@ -1,6 +1,15 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
+  // A simple newsletter subscription handler (just prevent default for now)
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert('Subscribed! (this is just a placeholder)');
+  };
+
   return (
     <footer className="bg-blue-600 text-white px-6 py-8">
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
@@ -11,16 +20,16 @@ export default function Footer() {
 
         {/* Center: policy links */}
         <div className="flex gap-4 text-sm">
-          <a href="/privacy" className="hover:underline">
+          <Link href="/privacy" className="hover:underline">
             Privacy Policy
-          </a>
-          <a href="/terms" className="hover:underline">
+          </Link>
+          <Link href="/terms" className="hover:underline">
             Terms & Conditions
-          </a>
+          </Link>
         </div>
 
         {/* Right side: newsletter subscription */}
-        <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-2">
+        <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
           <input
             type="email"
             required
