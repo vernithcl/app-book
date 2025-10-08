@@ -23,6 +23,9 @@ export default function Footer() {
           <Link href="/terms" className="hover:underline">
             Terms & Conditions
           </Link>
+           <Link href="/terms" className="hover:underline">
+            Contact Us
+          </Link>
         </div>
 
         <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
